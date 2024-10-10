@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="job_tracker.html">Job Tracker</a></li>
+            <li><a href="data_analytics.html">Data Analytics</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="login.html">Log In</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Job Tracker</h1>
+
+        <!-- Job Tracker Tabs -->
+        <div class="tabs">
+            <button onclick="showTab('product_cost')">Product Cost</button>
+            <button onclick="showTab('personnel_tracker')">Personnel Tracker</button>
+            <button onclick="showTab('equipment_tracker')">Equipment Tracker</button>
+            <button onclick="showTab('job_schedule')">Job Schedule</button>
+        </div>
+
+        <div class="tab-content" id="tab-content">
+            <!-- Job Tracker Data to be loaded dynamically -->
+            <p>Select a tab to view data.</p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const tabContent = {
+                product_cost: '<p>Product Cost Data</p>',
+                personnel_tracker: '<p>Personnel Tracker Data</p>',
+                equipment_tracker: '<p>Equipment Tracker Data</p>',
+                job_schedule: '<p>Job Schedule Data</p>',
+            };
+            document.getElementById('tab-content').innerHTML = tabContent[tabName];
+        }
+    </script>
+</body>
+</html>
